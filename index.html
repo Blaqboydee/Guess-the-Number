@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=10.0">
+    <title>GUESS THE NUMBER 2</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(23, 205, 205);
+        }
+
+        main{
+            background-color: rgb(4, 82, 134);
+            width: 40%;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            border-radius: 10px;
+        }
+
+        h1, h2, p{
+            color: white;
+            margin: 0;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .buttons{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            /* background-color: red; */
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button{
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            background-color: rgba(75, 85, 8, 0.238);
+            /* background: none; */
+            color: white;
+            font-size: 15px;
+            font-weight: 800;
+            border: none;
+        }
+
+        button:hover{
+            border-radius: 100%;
+            background-color: rgb(75, 85, 8);
+        }
+
+        @media (max-width: 1024px) {
+            main{
+                width: 80%;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            main{
+                width: 80%;
+                padding: 20px;
+            }
+
+            h1{
+                font-size: 30px;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Guess the number</h1>
+       <h2>Attempts left: <span id="attempts"></span></h2>
+        <div class="buttons">
+            <button onclick="one()">1</button>
+            <button onclick="two()">2</button>
+            <button onclick="three()">3</button>
+            <button onclick="four()">4</button>
+            <button onclick="five()">5</button>
+            <button onclick="six()">6</button>
+            <button onclick="seven()">7</button>
+            <button onclick="eight()">8</button>
+            <button onclick="nine()">9</button>
+            <button onclick="ten()">10</button>
+        </div>
+        <p id="output"></p>
+    </main>
+</body>
+</html>
+
+<script>
+ let attempts = 5
+ 
+ let remainingAttempts = document.getElementById('attempts')
+    
+ remainingAttempts.textContent = attempts; 
+    
+
+ function one() {
+    let result = 1;  
+    console.log(result);
+    let itsGuess = Math.floor(Math.random() * 10) + 1
+    console.log(itsGuess);
+
+    attempts--;
+
+    let remainingAttempts = document.getElementById('attempts')
+    
+    remainingAttempts.textContent = attempts;
+
+    let output = document.getElementById('output')
+  
+
+    if (result === itsGuess) {
+        output.innerHTML = 'Bravo! YOU GUESSED RIGHT!!'
+        disableButtons();
+        
+    } else {
+        if (attempts === 0) {
+             alert('Sorry, You have ran out of attempts.')
+             disableButtons();
+        } else {
+        output.innerHTML = 'TRY AGAIN'
+            
+        }
+        
+    }
+ 
+    
+ }
+
+ function two() {
+    let result = 2;
+    console.log(result);
+
+    let itsGuess = Math.floor(Math.random() * 10) + 1
+    console.log(itsGuess);
+
+    attempts--;
+
+let remainingAttempts = document.getElementById('attempts')
+
+remainingAttempts.textContent = attempts;
+
+let output = document.getElementById('output')
+
+
+if (result === itsGuess) {
+    output.innerHTML = 'Bravo! YOU GUESSED RIGHT!!'
+    disableButtons();
+    
+} else {
+    if (attempts === 0) {
+         alert('Sorry, You have ran out of attempts.')
+         disableButtons();
+    } else {
+    output.innerHTML = 'TRY AGAIN'
+        
+    }
+    
+}
+
+
+ }
+ 
+ function three() {
+    let result = 3; 
+    console.log(result);
+
+    let itsGuess = Math.floor(Math.random() * 10) + 1
+    console.log(itsGuess);
+
+    attempts--;
+
+let remainingAttempts = document.getElementById('attempts')
+
+remainingAttempts.textContent = attempts;
+
+let output = document.getElementById('output')
+
+
+if (result === itsGuess) {
+    output.innerHTML = 'Bravo! YOU GUESSED RIGHT!!'
+    disableButtons();
+    
+} else {
+    if (attempts === 0) {
+         alert('Sorry, You have ran out of attempts.')
+         disableButtons();
+    } else {
+    output.innerHTML = 'TRY AGAIN'
+        
+    }
+    
+}
+ 
+
+ }
+ 
+ function four() {
+    let result = 4;  
+    console.log(result);
+
+    let itsGuess = Math.floor(Math.random() * 10) + 1
+    console.log(itsGuess);
+
+    attempts--;
+
+let remainingAttempts = document.getElementById('attempts')
+
+remainingAttempts.textContent = attempts;
+
+let output = document.getElementById('output')
+
+
+if (result === itsGuess) {
+    output.innerHTML = 'Bravo! YOU GUESSED RIGHT!!'
+    disableButtons();
+    
+} else {
+    if (attempts === 0) {
+         alert('Sorry, You have ran out of attempts.')
+         disableButtons();
+    } else {
+    output.innerHTML = 'TRY AGAIN'
+        
+    }
+    
+}
+ 
+
+ }
+ 
+ function five() {
+    let result = 5; 
+    console.log(result);
+
+    let itsGuess = Math.floor(Math.random() * 10) + 1
+    console.log(itsGuess);
+
+    attempts--;
+
+let remainingAttempts = document.getElementById('attempts')
+
+remainingAttempts.textContent = attempts;
+
+let output = document.getElementById('output')
+
+
+if (result === itsGuess) {
+    output.innerHTML = 'Bravo! YOU GUESSED RIGHT!!'
+    disableButtons();
+    
+} else {
+    if (attempts === 0) {
+         alert('Sorry, You have ran out of attempts.')
+         disableButtons();
+    } else {
+    output.innerHTML = 'TRY AGAIN'
+        
+    }
+    
+}
+ 
+
+}
+
+ function six() {
+    let result = 6; 
+    console.log(result);
+
+    let itsGuess = Math.floor(Math.random() * 10) + 1
+    console.log(itsGuess);
+
+    attempts--;
+
+let remainingAttempts = document.getElementById('attempts')
+
+remainingAttempts.textContent = attempts;
+
+let output = document.getElementById('output')
+
+
+if (result === itsGuess) {
+    output.innerHTML = 'Bravo! YOU GUESSED RIGHT!!'
+    disableButtons();
+    
+} else {
+    if (attempts === 0) {
+         alert('Sorry, You have ran out of attempts.')
+         disableButtons();
+    } else {
+    output.innerHTML = 'TRY AGAIN'
+        
+    }
+    
+}
+
+ }
+ 
+ function seven() {
+    let result = 7;  
+    console.log(result);
+
+    let itsGuess = Math.floor(Math.random() * 10) + 1
+    console.log(itsGuess);
+
+    attempts--;
+
+let remainingAttempts = document.getElementById('attempts')
+
+remainingAttempts.textContent = attempts;
+
+let output = document.getElementById('output')
+
+
+if (result === itsGuess) {
+    output.innerHTML = 'Bravo! YOU GUESSED RIGHT!!'
+    disableButtons();
+    
+} else {
+    if (attempts === 0) {
+         alert('Sorry, You have ran out of attempts.')
+         disableButtons();
+    } else {
+    output.innerHTML = 'TRY AGAIN'
+        
+    }
+    
+}
+
+ }
+ 
+ function eight() {
+    let result = 8;
+    console.log(result);
+
+    let itsGuess = Math.floor(Math.random() * 10) + 1
+    console.log(itsGuess);
+
+    attempts--;
+
+let remainingAttempts = document.getElementById('attempts')
+
+remainingAttempts.textContent = attempts;
+
+let output = document.getElementById('output')
+
+
+if (result === itsGuess) {
+    output.innerHTML = 'Bravo! YOU GUESSED RIGHT!!'
+    disableButtons();
+    
+} else {
+    if (attempts === 0) {
+         alert('Sorry, You have ran out of attempts.')
+         disableButtons();
+    } else {
+    output.innerHTML = 'TRY AGAIN'
+        
+    }
+    
+}
+        
+    
+ 
+
+ }
+ 
+ function nine() {
+    let result = 9;  
+    console.log(result);
+
+    let itsGuess = Math.floor(Math.random() * 10) + 1
+    console.log(itsGuess);
+
+    attempts--;
+
+let remainingAttempts = document.getElementById('attempts')
+
+remainingAttempts.textContent = attempts;
+
+let output = document.getElementById('output')
+
+
+if (result === itsGuess) {
+    output.innerHTML = 'Bravo! YOU GUESSED RIGHT!!'
+    disableButtons();
+    
+} else {
+    if (attempts === 0) {
+         alert('Sorry, You have ran out of attempts.')
+         disableButtons();
+    } else {
+    output.innerHTML = 'TRY AGAIN'
+        
+    }
+    
+}
+
+ }
+ 
+ function ten() {
+    let result = 10;
+    console.log(result);
+
+    let itsGuess = Math.floor(Math.random() * 10) + 1
+    console.log(itsGuess);
+
+    attempts--;
+
+let remainingAttempts = document.getElementById('attempts')
+
+remainingAttempts.textContent = attempts;
+
+let output = document.getElementById('output')
+
+
+if (result === itsGuess) {
+    output.innerHTML = 'Bravo! YOU GUESSED RIGHT!!'
+    disableButtons();
+    
+} else {
+    if (attempts === 0) {
+         alert('Sorry, You have ran out of attempts.')
+         disableButtons();
+    } else {
+    output.innerHTML = 'TRY AGAIN'
+        
+    }
+    
+}
+ 
+
+ }
+
+ function disableButtons() {
+    const buttons = document.querySelectorAll ("button");
+    buttons.forEach(button => {button.disabled = true});
+ }
+
+
+</script>
