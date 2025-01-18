@@ -2,88 +2,123 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=10.0">
-    <title>GUESS THE NUMBER 2</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
     <style>
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: rgb(23, 205, 205);
-        }
-
-        main{
-            background-color: rgb(4, 82, 134);
-            width: 40%;
-            height: 40vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            border-radius: 10px;
-        }
-
-        h1, h2, p{
-            color: white;
+        /* General Reset */
+        * {
             margin: 0;
-            text-align: center;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to right, #6dd5fa, #2980b9);
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        .buttons{
-            width: 50%;
-            display: flex;
-            justify-content: center;
-            /* background-color: red; */
-            gap: 10px;
-            flex-wrap: wrap;
+        /* Main Container */
+        main {
+            background: #0b3d91;
+            width: 40%;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
 
-        button{
-            width: 30px;
-            height: 30px;
-            border-radius: 100%;
-            background-color: rgba(75, 85, 8, 0.238);
-            /* background: none; */
+        /* Title and Text */
+        h1, h2, p {
             color: white;
-            font-size: 15px;
-            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        #output {
+            font-size: 18px;
+            color: #f7dc6f;
+            margin-top: 10px;
+        }
+
+        /* Button Container */
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        /* Button Styling */
+        button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             border: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background: #4CAF50;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
         }
 
-        button:hover{
-            border-radius: 100%;
-            background-color: rgb(75, 85, 8);
+        button:hover {
+            background: #3e8e41;
+            transform: scale(1.1);
         }
 
-        @media (max-width: 1024px) {
-            main{
+        button:disabled {
+            background: gray;
+            cursor: not-allowed;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
                 width: 80%;
+                padding: 15px;
+            }
+
+            h1, h2 {
+                font-size: 18px;
+            }
+
+            button {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
             }
         }
-        
-        @media (max-width: 400px) {
-            main{
-                width: 80%;
-                padding: 20px;
+
+        @media (max-width: 480px) {
+            main {
+                width: 90%;
             }
 
-            h1{
-                font-size: 30px;
+            button {
+                width: 35px;
+                height: 35px;
+                font-size: 14px;
+            }
+
+            h1, h2 {
+                font-size: 16px;
+            }
+
+            #output {
+                font-size: 16px;
             }
         }
-
-
-
     </style>
 </head>
 <body>
     <main>
-        <h1>Guess the number</h1>
-       <h2>Attempts left: <span id="attempts"></span></h2>
+        <h1>Guess the Number</h1>
+        <h2>Attempts Left: <span id="attempts"></span></h2>
         <div class="buttons">
             <button onclick="one()">1</button>
             <button onclick="two()">2</button>
